@@ -1,0 +1,329 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111923" />
+  <meta name="description" content="Arooj Fatima — WordPress Website Developer building thoughtful, modern business and e-commerce websites." />
+  <title>Arooj Fatima — WordPress Website Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --clay: #B18676;
+      --teal: #154752;
+      --teal-deep: #192D35;
+      --navy: #111923;
+      --ink: #040B02;
+      --cream: #F5F2ED;
+      --white: #FCFBF8;
+      --muted: #aeb8bb;
+      --line: rgba(255,255,255,.13);
+      --radius: 26px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--navy); color: var(--white); font-family: "DM Sans", sans-serif; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .grain { position: fixed; inset: 0; pointer-events: none; z-index: 20; opacity: .035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E"); }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: auto; }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: 24px 0; position:relative; z-index:5; }
+    .brand { display:flex; align-items:center; gap:11px; font:800 15px "Manrope", sans-serif; letter-spacing:-.04em; }
+    .brand-mark { width:37px; height:37px; border-radius:13px; background:var(--clay); color:var(--ink); display:grid; place-items:center; font-weight:800; font-size:17px; transform:rotate(-7deg); }
+    .nav-links { display:flex; align-items:center; gap:30px; color:#c3cbcd; font-size:13px; }
+    .nav-links a { transition:color .25s; }
+    .nav-links a:hover { color:var(--clay); }
+    .nav-cta { padding:12px 17px; border:1px solid rgba(177,134,118,.65); border-radius:999px; color:var(--white)!important; }
+    .menu-btn { display:none; background:none; border:0; color:white; font-size:25px; }
+    .hero { min-height:650px; display:grid; grid-template-columns:1.04fr .96fr; align-items:center; gap:34px; padding:54px 0 88px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; color:#d6b5a8; text-transform:uppercase; letter-spacing:.17em; font-size:10px; font-weight:700; }
+    .eyebrow:before { content:""; width:25px; height:1px; background:var(--clay); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font:800 clamp(43px, 6.3vw, 78px)/1.02 "Manrope",sans-serif; letter-spacing:-.075em; margin:22px 0 22px; max-width:680px; }
+    h1 .accent { color:var(--clay); display:inline-block; }
+    .hero-copy { color:#b9c1c3; font-size:16px; line-height:1.85; max-width:510px; margin-bottom:30px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .btn { display:inline-flex; justify-content:center; align-items:center; gap:12px; padding:15px 21px; border-radius:999px; font-size:13px; font-weight:700; transition:transform .25s, background .25s, border-color .25s; }
+    .btn:hover { transform:translateY(-4px); }
+    .btn-primary { color:var(--ink); background:var(--clay); }
+    .btn-primary:hover { background:#c69c8d; }
+    .btn-outline { border:1px solid rgba(255,255,255,.2); color:var(--white); }
+    .btn-outline:hover { border-color:var(--clay); }
+    .hero-meta { display:flex; align-items:center; gap:18px; margin-top:36px; color:#aab5b7; font-size:11px; }
+    .status-dot { width:8px; height:8px; display:inline-block; border-radius:50%; background:#93c9a4; box-shadow:0 0 0 5px rgba(147,201,164,.1); margin-right:7px; }
+    .hero-visual { position:relative; min-height:500px; display:grid; place-items:center; isolation:isolate; }
+    .orbit { position:absolute; width:min(100%, 450px); aspect-ratio:1; border:1px solid rgba(177,134,118,.25); border-radius:50%; animation:spin 35s linear infinite; }
+    .orbit:before,.orbit:after { content:""; position:absolute; width:9px; height:9px; border-radius:50%; background:var(--clay); box-shadow:0 0 20px rgba(177,134,118,.8); }
+    .orbit:before { top:14%; left:14%; }
+    .orbit:after { bottom:12%; right:16%; width:6px; height:6px; background:#7bb1b8; }
+    .portrait-backdrop { position:absolute; width:72%; height:76%; right:5%; top:13%; border-radius:48% 48% 28px 28px; background:linear-gradient(150deg,var(--clay),#775263 80%); transform:rotate(4deg); }
+    .portrait-frame { position:relative; width:min(82%,390px); height:480px; overflow:hidden; border-radius:48% 48% 24px 24px; background:linear-gradient(160deg,#253f46,#0b111a); box-shadow:0 30px 100px rgba(0,0,0,.35); transform:translateY(5px); }
+    .portrait-frame img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; filter:saturate(.83); }
+    .portrait-frame .placeholder { height:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; padding:30px; text-align:center; color:#d7dfe0; }
+    .portrait-frame .placeholder b { font:800 64px "Manrope"; color:var(--clay); }
+    .floating-note { position:absolute; z-index:2; background:rgba(17,25,35,.88); border:1px solid rgba(255,255,255,.14); backdrop-filter:blur(16px); border-radius:17px; padding:14px 17px; box-shadow:0 16px 40px rgba(0,0,0,.18); animation:float 5s ease-in-out infinite; }
+    .floating-note small { display:block; color:#aab6b8; font-size:10px; margin-bottom:5px; }
+    .floating-note strong { font:700 14px "Manrope"; }
+    .note-one { left:0; top:19%; }
+    .note-two { right:-2%; bottom:15%; animation-delay:-2s; }
+    .note-icon { color:var(--clay); margin-right:7px; }
+    .scroll-cue { position:absolute; bottom:0; left:50%; transform:translateX(-50%); color:#829194; font-size:9px; letter-spacing:.2em; text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:10px; }
+    .scroll-cue:after { content:""; height:28px; width:1px; background:linear-gradient(var(--clay),transparent); }
+    .ticker { overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#0d151e; }
+    .ticker-track { display:flex; width:max-content; gap:34px; padding:19px 0; animation:marquee 28s linear infinite; color:#d1d8d8; font:700 11px "Manrope"; text-transform:uppercase; letter-spacing:.16em; }
+    .ticker-track span { display:flex; align-items:center; gap:34px; }
+    .ticker-track i { width:6px; height:6px; border-radius:50%; background:var(--clay); display:inline-block; }
+    section { padding:105px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:43px; }
+    .section-kicker { color:var(--clay); font-size:10px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; margin-bottom:15px; }
+    h2 { font:800 clamp(32px,4.4vw,52px)/1.08 "Manrope",sans-serif; letter-spacing:-.065em; margin-bottom:0; }
+    .section-intro { max-width:380px; color:#aeb9bb; font-size:13px; line-height:1.8; margin:0; }
+    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:start; }
+    .about-statement { font:700 clamp(24px,3vw,37px)/1.3 "Manrope"; letter-spacing:-.05em; }
+    .about-statement em { color:var(--clay); font-style:normal; }
+    .about-text { color:#aeb9bb; font-size:14px; line-height:1.95; }
+    .skill-pills { display:flex; flex-wrap:wrap; gap:9px; margin-top:24px; }
+    .skill-pills span { padding:10px 13px; border:1px solid rgba(255,255,255,.13); border-radius:999px; font-size:11px; color:#dce1e0; }
+    .projects { background:var(--cream); color:var(--navy); }
+    .projects .section-intro { color:#60696a; }
+    .projects .section-kicker { color:var(--teal); }
+    .project-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    .project-card { min-width:0; background:#fff; border-radius:22px; overflow:hidden; border:1px solid rgba(17,25,35,.07); transition:transform .35s, box-shadow .35s; }
+    .project-card:hover { transform:translateY(-8px); box-shadow:0 24px 50px rgba(17,25,35,.12); }
+    .project-art { height:255px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#d9c7bb,#b18676); }
+    .project-card:nth-child(2) .project-art { background:linear-gradient(135deg,#193b42,#101923); }
+    .browser { width:78%; height:77%; border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 15px 35px rgba(0,0,0,.2); transform:rotate(-3deg); transition:transform .4s; }
+    .project-card:hover .browser { transform:rotate(0) scale(1.035); }
+    .browser-bar { height:18px; background:#f0efec; display:flex; gap:4px; align-items:center; padding:0 9px; }
+    .browser-bar i { width:4px; height:4px; border-radius:50%; background:#c0b9b4; }
+    .mock-content { padding:19px; color:#192d35; }
+    .mock-brand { font:800 11px "Manrope"; letter-spacing:.04em; }
+    .mock-line { height:5px; width:68%; background:#d9dfdc; border-radius:5px; margin-top:12px; }
+    .mock-line.short { width:42%; }
+    .mock-product-row { display:flex; gap:8px; margin-top:17px; }
+    .mock-product { flex:1; height:56px; border-radius:6px; background:#e8d9ce; }
+    .mock-product:nth-child(2) { background:#d6e0de; }
+    .mock-product:nth-child(3) { background:#d4d4ce; }
+    .project-card:nth-child(2) .mock-content { color:#193b42; }
+    .project-card:nth-child(2) .mock-product { background:#e4e9e4; }
+    .project-info { padding:23px 25px 25px; }
+    .project-top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+    .project-top h3 { font:800 20px "Manrope"; letter-spacing:-.04em; margin:0; }
+    .project-arrow { width:34px; height:34px; border-radius:50%; border:1px solid #d9dedb; display:grid; place-items:center; transition:background .25s; }
+    .project-card:hover .project-arrow { background:var(--clay); border-color:var(--clay); }
+    .project-info p { color:#677172; font-size:12px; line-height:1.7; margin-bottom:17px; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; }
+    .tags span { background:#f0f1ee; color:#3d5557; border-radius:999px; padding:7px 10px; font-size:10px; font-weight:700; }
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .service-card { padding:27px 24px; border:1px solid var(--line); border-radius:20px; background:linear-gradient(150deg,rgba(255,255,255,.045),rgba(255,255,255,.012)); transition:border-color .3s, transform .3s; }
+    .service-card:hover { transform:translateY(-6px); border-color:rgba(177,134,118,.65); }
+    .service-num { color:var(--clay); font:700 11px "Manrope"; letter-spacing:.1em; }
+    .service-card h3 { font:700 19px "Manrope"; margin:26px 0 10px; letter-spacing:-.04em; }
+    .service-card p { min-height:58px; color:#aeb9bb; font-size:12px; line-height:1.8; }
+    .price { display:flex; align-items:baseline; gap:5px; margin:23px 0 20px; }
+    .price strong { font:800 35px "Manrope"; letter-spacing:-.06em; color:var(--clay); }
+    .price span { color:#9ba7a9; font-size:11px; }
+    .service-link { font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:17px; }
+    .process { background:var(--teal-deep); }
+    .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+    .step { padding-top:22px; border-top:1px solid rgba(255,255,255,.22); }
+    .step span { color:var(--clay); font:700 11px "Manrope"; }
+    .step h3 { font:700 17px "Manrope"; margin:22px 0 9px; }
+    .step p { color:#b4c0c1; font-size:12px; line-height:1.8; margin:0; }
+    .contact-panel { position:relative; overflow:hidden; background:var(--clay); color:var(--ink); border-radius:30px; padding:clamp(30px,6vw,70px); display:grid; grid-template-columns:1fr auto; align-items:end; gap:30px; }
+    .contact-panel:after { content:"AF"; position:absolute; right:17%; top:-40%; font:800 250px "Manrope"; color:rgba(255,255,255,.09); pointer-events:none; }
+    .contact-panel .section-kicker { color:#3b3330; }
+    .contact-panel h2 { max-width:650px; position:relative; z-index:1; }
+    .contact-panel p { margin:18px 0 0; color:#3d3532; font-size:13px; line-height:1.8; max-width:470px; }
+    .contact-panel .btn { background:var(--navy); color:white; position:relative; z-index:1; white-space:nowrap; }
+    footer { padding:30px 0; color:#9eaaad; font-size:11px; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; align-items:center; }
+    .footer-links { display:flex; gap:18px; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+    @keyframes marquee { to { transform:translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
+    @media (max-width: 850px) {
+      .wrap { width:min(100% - 34px, 680px); }
+      .nav-links { gap:17px; }
+      .hero { grid-template-columns:1fr; padding:50px 0 90px; gap:10px; }
+      .hero-content { text-align:center; }
+      .hero-content .eyebrow { justify-content:center; }
+      .hero-copy { margin-left:auto; margin-right:auto; }
+      .actions,.hero-meta { justify-content:center; }
+      .hero-visual { min-height:480px; }
+      .portrait-frame { height:440px; }
+      .scroll-cue { display:none; }
+      .about-grid { grid-template-columns:1fr; gap:25px; }
+      .services-grid { grid-template-columns:1fr 1fr; }
+      .process-grid { grid-template-columns:1fr 1fr; row-gap:35px; }
+      .contact-panel { grid-template-columns:1fr; align-items:start; }
+      .contact-panel .btn { width:max-content; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width:calc(100% - 30px); }
+      .nav { padding:17px 0; }
+      .menu-btn { display:block; }
+      .nav-links { display:none; position:absolute; top:65px; right:0; left:0; padding:20px; background:#19232e; border:1px solid var(--line); border-radius:18px; flex-direction:column; align-items:stretch; gap:20px; }
+      .nav-links.open { display:flex; }
+      .nav-cta { text-align:center; }
+      .hero { padding-top:42px; }
+      h1 { font-size:47px; }
+      .hero-copy { font-size:14px; }
+      .hero-visual { min-height:400px; margin-top:10px; }
+      .portrait-frame { height:370px; width:78%; }
+      .orbit { width:90%; }
+      .note-one { left:-1%; top:14%; }
+      .note-two { right:-1%; bottom:9%; }
+      .floating-note { padding:11px 12px; }
+      .floating-note strong { font-size:12px; }
+      section { padding:72px 0; }
+      .section-head { display:block; margin-bottom:30px; }
+      .section-intro { margin-top:17px; }
+      .project-grid,.services-grid,.process-grid { grid-template-columns:1fr; }
+      .project-art { height:220px; }
+      .service-card p { min-height:0; }
+      .footer-row { flex-direction:column; align-items:flex-start; }
+      .contact-panel { border-radius:22px; }
+      .contact-panel h2 { font-size:36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="wrap nav">
+    <a class="brand" href="#home" aria-label="Arooj Fatima home"><span class="brand-mark">A</span><span>AROOJ FATIMA<span style="color:var(--clay)">.</span></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a><a href="#work">Selected work</a><a href="#services">Services</a><a href="#process">Process</a><a class="nav-cta" href="#contact">Let’s talk ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div class="hero-content reveal">
+        <div class="eyebrow">Independent web developer</div>
+        <h1>Thoughtful websites.<br><span class="accent">Real impact.</span></h1>
+        <p class="hero-copy">I’m Arooj Fatima, a WordPress Website Developer creating modern business websites and e-commerce experiences that look polished, feel effortless, and help brands grow.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#work">Explore my work <span>↘</span></a>
+          <a class="btn btn-outline" href="#contact">Start a project <span>↗</span></a>
+        </div>
+        <div class="hero-meta"><span><i class="status-dot"></i>Available for projects</span><span>WordPress · Shopify · Canva</span></div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="orbit"></div><div class="portrait-backdrop"></div>
+        <div class="portrait-frame" id="portraitFrame">
+          <img src="assets/arooj-profile.jpeg" alt="Arooj Fatima wearing a black niqab" onerror="this.style.display='none';document.getElementById('portraitFallback').style.display='flex'">
+          <div class="placeholder" id="portraitFallback" style="display:none"><b>AF</b><span>Add your portrait to <strong>assets/arooj-profile.jpeg</strong></span></div>
+        </div>
+        <div class="floating-note note-one"><small>My focus</small><strong><span class="note-icon">✳</span>Design with purpose</strong></div>
+        <div class="floating-note note-two"><small>Building with</small><strong>WordPress + Shopify</strong></div>
+      </div>
+      <div class="scroll-cue">Scroll to explore</div>
+    </section>
+
+    <div class="ticker"><div class="ticker-track">
+      <span>WordPress websites <i></i> E-commerce stores <i></i> Shopify development <i></i> Thoughtful design <i></i> WordPress websites <i></i> E-commerce stores <i></i> Shopify development <i></i> Thoughtful design <i></i></span>
+      <span aria-hidden="true">WordPress websites <i></i> E-commerce stores <i></i> Shopify development <i></i> Thoughtful design <i></i> WordPress websites <i></i> E-commerce stores <i></i> Shopify development <i></i> Thoughtful design <i></i></span>
+    </div></div>
+
+    <section class="wrap" id="about">
+      <div class="about-grid">
+        <div class="reveal"><div class="section-kicker">01 / A little about me</div><div class="about-statement">I turn ideas into <em>useful digital experiences.</em></div></div>
+        <div class="reveal">
+          <p class="about-text">I help businesses build a stronger online presence through clean, user-friendly websites. From online stores to service-based websites, I focus on clear structure, responsive layouts, and details that make a site feel trustworthy.</p>
+          <p class="about-text">My approach is simple: understand the goal, build with care, and make the experience work beautifully across screens.</p>
+          <div class="skill-pills"><span>WordPress</span><span>WooCommerce</span><span>Shopify</span><span>Responsive Design</span><span>Canva</span><span>On-page SEO basics</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="work">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">02 / Selected work</div><h2>Made with intention.</h2></div><p class="section-intro">A selection of websites I’ve worked on. Explore the live projects to see the experience in action.</p></div>
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <a href="https://elorey.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Elorey website">
+              <div class="project-art"><div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-content"><div class="mock-brand">ELOREY</div><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-product-row"><div class="mock-product"></div><div class="mock-product"></div><div class="mock-product"></div></div></div></div></div>
+            </a>
+            <div class="project-info"><div class="project-top"><h3>Elorey</h3><a class="project-arrow" href="https://elorey.com" target="_blank" rel="noopener noreferrer" aria-label="Open Elorey">↗</a></div><p>An online store experience designed to make browsing products simple and clear.</p><div class="tags"><span>WordPress</span><span>E-commerce</span><span>Responsive</span></div></div>
+          </article>
+          <article class="project-card reveal">
+            <a href="https://redwoodtrading.shop" target="_blank" rel="noopener noreferrer" aria-label="Visit Redwood Trading website">
+              <div class="project-art"><div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-content"><div class="mock-brand">REDWOOD TRADING</div><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-product-row"><div class="mock-product"></div><div class="mock-product"></div><div class="mock-product"></div></div></div></div></div>
+            </a>
+            <div class="project-info"><div class="project-top"><h3>Redwood Trading</h3><a class="project-arrow" href="https://redwoodtrading.shop" target="_blank" rel="noopener noreferrer" aria-label="Open Redwood Trading">↗</a></div><p>A product-focused storefront with a clean layout and a straightforward shopping journey.</p><div class="tags"><span>WordPress</span><span>Online Store</span><span>UI Design</span></div></div>
+          </article>
+          <article class="project-card reveal">
+            <a href="https://mah-contarcting.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit MAH Contracting website">
+              <div class="project-art" style="background:linear-gradient(135deg,#d8d2c4,#a7b0a8)">
+                <div class="browser"><div class="browser-bar"><i></i><i></i><i></i></div><div class="mock-content"><div class="mock-brand">MAH CONTRACTING</div><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-product-row"><div class="mock-product" style="background:#b8c1b7"></div><div class="mock-product" style="background:#d4c6b5"></div><div class="mock-product" style="background:#c4c9c4"></div></div></div></div>
+              </div>
+            </a>
+            <div class="project-info"><div class="project-top"><h3>MAH Contracting</h3><a class="project-arrow" href="https://mah-contarcting.com/" target="_blank" rel="noopener noreferrer" aria-label="Open MAH Contracting">↗</a></div><p>A professional contracting business website designed to present services and build trust with potential customers.</p><div class="tags"><span>Business Website</span><span>WordPress</span><span>Responsive</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="services">
+      <div class="section-head reveal"><div><div class="section-kicker">03 / What I can build</div><h2>Services, made simple.</h2></div><p class="section-intro">Clear starting prices for the website you need. Final pricing can vary with the scope and features.</p></div>
+      <div class="services-grid">
+        <article class="service-card reveal"><span class="service-num">SERVICE 01</span><h3>WordPress Shopping Website</h3><p>A product store with organized pages and a smooth shopping experience.</p><div class="price"><strong>$98</strong><span>/ starting price</span></div><a class="service-link" href="https://mail.google.com/mail/?view=cm&to=fatimaaroojfatima126@gmail.com&su=WordPress%20Shopping%20Website%20Inquiry&body=Hi%20Arooj%2C%0A%0AI%27m%20interested%20in%20a%20WordPress%20Shopping%20Website.%0A%0A" target="_blank" rel="noopener noreferrer">Discuss your store <span>↗</span></a></article>
+        <article class="service-card reveal"><span class="service-num">SERVICE 02</span><h3>Business / Service Website</h3><p>A professional online home for your business, services, and enquiries.</p><div class="price"><strong>$180</strong><span>/ starting price</span></div><a class="service-link" href="https://mail.google.com/mail/?view=cm&to=fatimaaroojfatima126@gmail.com&su=Business%20Website%20Inquiry&body=Hi%20Arooj%2C%0A%0AI%27m%20interested%20in%20a%20Business%2FService%20Website.%0A%0A" target="_blank" rel="noopener noreferrer">Build my website <span>↗</span></a></article>
+        <article class="service-card reveal"><span class="service-num">SERVICE 03</span><h3>Shopify Website</h3><p>A modern Shopify storefront shaped around your brand and products.</p><div class="price"><strong>$90</strong><span>/ starting price</span></div><a class="service-link" href="https://mail.google.com/mail/?view=cm&to=fatimaaroojfatima126@gmail.com&su=Shopify%20Website%20Inquiry&body=Hi%20Arooj%2C%0A%0AI%27m%20interested%20in%20a%20Shopify%20Website.%0A%0A" target="_blank" rel="noopener noreferrer">Launch on Shopify <span>↗</span></a></article>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="section-kicker">04 / How I work</div><h2>From first idea to launch.</h2></div><p class="section-intro">A clear process keeps the project focused, collaborative, and moving forward.</p></div>
+        <div class="process-grid">
+          <div class="step reveal"><span>01 / DISCOVER</span><h3>Understand the goal</h3><p>We clarify your business, audience, and what the website needs to achieve.</p></div>
+          <div class="step reveal"><span>02 / PLAN</span><h3>Shape the experience</h3><p>We map out the pages, content, and visual direction before building.</p></div>
+          <div class="step reveal"><span>03 / BUILD</span><h3>Bring it to life</h3><p>I create a responsive website with careful attention to layout and details.</p></div>
+          <div class="step reveal"><span>04 / LAUNCH</span><h3>Ready for the world</h3><p>We review the result, make agreed refinements, and prepare it for launch.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="contact-panel reveal">
+        <div><div class="section-kicker">05 / Have a project in mind?</div><h2>Let’s build something your business can be proud of.</h2><p>Tell me what you’re planning. We can talk through your goals and find the right starting point.</p></div>
+        <a class="btn" href="https://mail.google.com/mail/?view=cm&to=fatimaaroojfatima126@gmail.com&su=Website%20Project%20Inquiry&body=Hi%20Arooj%2C%0A%0AI%20am%20interested%20in%20discussing%20a%20website%20project%20with%20you.%0A%0A" target="_blank" rel="noopener noreferrer">Let’s talk about your project ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-row"><a class="brand" href="#home"><span class="brand-mark">A</span><span>AROOJ FATIMA<span style="color:var(--clay)">.</span></span></a><span>Designed with intention · © <span id="year"></span> Arooj Fatima</span><div class="footer-links"><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a></div></div></footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
